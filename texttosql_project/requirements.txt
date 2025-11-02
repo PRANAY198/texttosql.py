@@ -1,0 +1,12 @@
+streamlit
+sqlalchemy
+requests
+psycopg2-binary
+pymysql
+pyodbc
+cx_Oracle
+snowflake-sqlalchemy
+duckdb
+mariadb
+pandas
+PERPLEXITY_API_KEY = "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"
