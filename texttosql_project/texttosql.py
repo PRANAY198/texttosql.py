@@ -159,7 +159,7 @@ if mode == "Database SQL Assistant":
             with st.expander("🔍 Database Schema", expanded=False):
                 st.markdown("<div style='background:#000;border-radius:10px;padding:14px'><pre style='font-size:1.1em; color: #fff;'>"+ schema_text +"</pre></div>", unsafe_allow_html=True)
             user_prompt = st.text_area("💬 Ask your question", placeholder="e.g., Show top 10 customers by total purchase amount in 2024", height=100)
-            if st.button("🚀 Generate & Run SQL") and user_prompt.strip():
+            if st.button("🚀 Generate & Run SQL"):
                 with st.spinner("Analyzing and generating SQL..."):
                     sql_query = nl_to_sql(user_prompt, schema_text)
                 st.subheader("🧾 Generated SQL (line by line)")
@@ -169,7 +169,6 @@ if mode == "Database SQL Assistant":
                     typed_code += line + '\n'
                     code_placeholder.code(typed_code, language="sql")
                     time.sleep(0.13)
-            if st.button("🚀 Generate & Run SQL") and user_prompt.strip():
                 if not is_safe_sql(sql_query):
                     st.warning("⛔ Query blocked: Dangerous operations (DROP, DELETE, TRUNCATE) are not allowed.")
                 else:
