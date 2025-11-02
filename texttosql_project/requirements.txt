@@ -9,4 +9,3 @@ snowflake-sqlalchemy
 duckdb
 mariadb
 pandas
-PERPLEXITY_API_KEY = "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"
