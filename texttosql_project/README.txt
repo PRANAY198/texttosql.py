@@ -7,9 +7,9 @@ AI SQL Assistant is a Streamlit-powered app that lets you query databases using 
 
 Screenshots
 -----------
-(main_ui.png)
-(main_ui_2.png)
-(result.jpg)
+![Main UI](images/main_ui.png)
+![Main UI](images/main_ui_2.png)
+![Result UI](images/result.jpg)
 
 Features
 --------
