@@ -77,7 +77,13 @@ def execute_sql(engine, query):
         rows = result.fetchall()
         columns = result.keys()
     return columns, rows
-
+def is_safe_sql(query: str) -> bool:
+    ban_words = ['truncate', 'drop', 'delete']
+    query_lc = query.lower()
+    for ban in ban_words:
+        if f'{ban} ' in query_lc or f'{ban}\n' in query_lc:
+            return False
+    return True
 def create_dynamic_engine(db_type, user, password, host, port, db_name):
     if db_type == "PostgreSQL":
         return create_engine(f"postgresql+psycopg2://{user}:{password}@{host}:{port}/{db_name}")
@@ -163,9 +169,13 @@ if mode == "Database SQL Assistant":
                     typed_code += line + '\n'
                     code_placeholder.code(typed_code, language="sql")
                     time.sleep(0.13)
-                with st.spinner("Validating query..."):
-                    is_valid, error_msg = validate_sql(engine, sql_query)
-                    time.sleep(5)
+            if st.button("🚀 Generate & Run SQL") and user_prompt.strip():
+                if not is_safe_sql(sql_query):
+                    st.warning("⛔ Query blocked: Dangerous operations (DROP, DELETE, TRUNCATE) are not allowed.")
+                else:
+                    with st.spinner("Validating query..."):
+                        is_valid, error_msg = validate_sql(engine, sql_query)
+                        time.sleep(5)
                 if is_valid:
                     st.subheader("✅ SQL Query is valid")
                     with st.spinner("Running query..."):
