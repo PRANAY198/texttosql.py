@@ -9,7 +9,7 @@ Screenshots
 -----------
 ![Main UI](images/main_ui.png)
 ![Main UI](images/main_ui_2.png)
-![Result UI](images/result.jpg)
+![Result UI](images/result.png)
 
 Features
 --------
