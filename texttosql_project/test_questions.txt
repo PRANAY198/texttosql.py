@@ -1,0 +1,19 @@
+List all customers who placed an order for Electronics products after April 2023.
+
+Show the total amount spent by each customer, only for delivered orders.
+
+List the top 2 products by total quantity ordered.
+
+Get the names of customers who bought more than one product in a single order.
+
+Find all Delhi customers who spent more than 10,000 in total.
+
+List all orders where order_value does not match the sum of order_items prices.
+
+For each city, show the average order value for delivered orders.
+
+What is the most popular product category in terms of items sold?
+
+List every customer and the names of products they have ordered.
+
+List all orders which include at least one product from 'Stationery' but none from 'Electronics'.

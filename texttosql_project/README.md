@@ -62,6 +62,21 @@ Script Stages
 9. Error handling
 10. General chatbot mode (switchable anytime)
 
+## Try the Sample Database and Advanced Queries
+
+To see full app capabilities and test advanced natural language queries, use the following files from this repository:
+- ddl.sql: Contains all table creation statements for setting up the database schema.
+- insert.sql: Insert realistic example data into your tables for meaningful queries.
+- test_questions.txt: Try out challenging sample questions to test the app’s AI-powered SQL translation and results.
+
+## How to use:
+
+- Use your preferred database client (SQLite, PostgreSQL, MySQL, etc.).
+- Run the statements in ddl.sql to create tables.
+- Run the statements in insert.sql to load sample data.
+- Connect the app to your database using the normal flow.
+- Open test_questions.txt, copy a question, and paste it into the app for instant results—no manual SQL required.
+
 Extending / Customization
 -------------------------
 - Add more DBs via create_dynamic_engine
